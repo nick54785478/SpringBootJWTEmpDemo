@@ -1,0 +1,599 @@
+{
+	"info": {
+		"_postman_id": "f585bcbe-1c26-40ad-bea2-46424bd404b9",
+		"name": "SpringSecurityJWTEmpDemo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20865420"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "1100602",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123",
+							"type": "text"
+						},
+						{
+							"key": "rememberme",
+							"value": "true",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/SpringSecurityDemo/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"SpringSecurityDemo",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "importRoleData",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n   {\"roleId\":\"admin\", \"roleName\":\"系統管理員\"},\r\n   {\"roleId\":\"dba\", \"roleName\":\"資料庫管理員\"},\r\n   {\"roleId\":\"supervisor\", \"roleName\":\"中階用戶\"},\r\n   {\"roleId\":\"handler\", \"roleName\":\"經辦人員\"},\r\n   {\"roleId\":\"examiner\", \"roleName\":\"覆核人員\"},\r\n   {\"roleId\":\"user\", \"roleName\":\"一般用戶\"}\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/SpringSecurityDemo/root/importRoleData",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"SpringSecurityDemo",
+						"root",
+						"importRoleData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "importUserData",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\"username\":\"1100101\", \"name\":\"劉備\", \"password\":\"123\", \"role\":\"supervisor\", \"department\":\"財務部\", \"deptId\":\"100\", \"email\":\"1100101@gmail.com\"},\r\n    {\"username\":\"1100102\", \"name\":\"趙雲\", \"password\":\"123\", \"role\":\"user\", \"department\":\"財務部\", \"deptId\":\"100\", \"email\":\"1100102@gmail.com\"},\r\n    {\"username\":\"1100103\", \"name\":\"諸葛亮\", \"password\":\"123\", \"role\":\"user\", \"department\":\"財務部\", \"deptId\":\"100\", \"email\":\"1100103@gmail.com\"},\r\n     \r\n    {\"username\":\"1100201\", \"name\":\"曹操\", \"password\":\"123\", \"role\":\"supervisor\", \"department\":\"業務部\", \"deptId\":\"200\", \"email\":\"1100201@gmail.com\"},\r\n    {\"username\":\"1100202\", \"name\":\"典偉\", \"password\":\"123\", \"role\":\"user\", \"department\":\"業務部\", \"deptId\":\"200\", \"email\":\"1100202@gmail.com\"},\r\n    {\"username\":\"1100203\", \"name\":\"許褚\", \"password\":\"123\", \"role\":\"user\", \"department\":\"業務部\", \"deptId\":\"200\", \"email\":\"1100203@gmail.com\"},\r\n\r\n    {\"username\":\"1100301\", \"name\":\"孫權\", \"password\":\"123\", \"role\":\"supervisor\", \"department\":\"資訊部\", \"deptId\":\"300\", \"email\":\"1100301@gmail.com\"},\r\n    {\"username\":\"1100302\", \"name\":\"呂蒙\", \"password\":\"123\", \"role\":\"user\", \"department\":\"資訊部\", \"deptId\":\"300\", \"email\":\"1100302@gmail.com\"},\r\n    {\"username\":\"1100303\", \"name\":\"陸遜\", \"password\":\"123\", \"role\":\"user\", \"department\":\"資訊部\", \"deptId\":\"300\", \"email\":\"1100303@gmail.com\"},\r\n\r\n    {\"username\":\"1100401\", \"name\":\"袁紹\", \"password\":\"123\", \"role\":\"supervisor\", \"department\":\"人事部\", \"deptId\":\"400\", \"email\":\"1100401@gmail.com\"},\r\n    {\"username\":\"1100402\", \"name\":\"顏良\", \"password\":\"123\", \"role\":\"user\", \"department\":\"人事部\", \"deptId\":\"400\", \"email\":\"1100402@gmail.com\"},\r\n    {\"username\":\"1100403\", \"name\":\"文醜\", \"password\":\"123\", \"role\":\"user\", \"department\":\"人事部\", \"deptId\":\"400\", \"email\":\"1100403@gmail.com\"},\r\n    \r\n    {\"username\":\"1100501\", \"name\":\"張角\", \"password\":\"123\", \"role\":\"supervisor\", \"department\":\"行政部\", \"deptId\":\"500\", \"email\":\"1100501@gmail.com\"},\r\n    {\"username\":\"1100502\", \"name\":\"張寶\", \"password\":\"123\", \"role\":\"user\", \"department\":\"行政部\", \"deptId\":\"500\", \"email\":\"1100502@gmail.com\"},\r\n    {\"username\":\"1100503\", \"name\":\"張梁\", \"password\":\"123\", \"role\":\"user\", \"department\":\"行政部\", \"deptId\":\"500\", \"email\":\"1100503@gmail.com\"}\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/SpringSecurityDemo/root/importUserData",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"SpringSecurityDemo",
+						"root",
+						"importUserData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "importAuthorityData",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\"funcId\":\"11101001\", \"funcType\":\"S\", \"funcName\":\"匯入角色資料\", \"servletPath\":\"/importRoleData\", \"dispOrder\":\"0001\", \"permitAll\":\"N\"},\r\n    {\"funcId\":\"11101002\", \"funcType\":\"S\", \"funcName\":\"匯入使用者測試資料\", \"servletPath\":\"/importUserData\", \"dispOrder\":\"0002\", \"permitAll\":\"N\"},\r\n    {\"funcId\":\"11101003\", \"funcType\":\"S\", \"funcName\":\"匯入權限功能資料\", \"servletPath\":\"/importAuthorityData\",\"dispOrder\":\"0003\", \"permitAll\":\"N\"},\r\n    {\"funcId\":\"11101004\", \"funcType\":\"S\", \"funcName\":\"新增一名使用者(可建立管理者)\", \"servletPath\":\"/addAdmin\", \"dispOrder\":\"0004\", \"permitAll\":\"N\"},\r\n    {\"funcId\":\"11101005\", \"funcType\":\"S\", \"funcName\":\"新增一名部門管理者\", \"servletPath\":\"/admin/register\", \"dispOrder\":\"0005\", \"permitAll\":\"N\"},\r\n    {\"funcId\":\"11101006\", \"funcType\":\"S\", \"funcName\":\"新增一名部門使用者\", \"servletPath\":\"/supervisor/register\", \"dispOrder\":\"0006\", \"permitAll\":\"N\"},\r\n    \r\n\r\n    \r\n\r\n    {\"funcId\":\"11102001\", \"funcType\":\"S\", \"funcName\":\"查詢所有角色\", \"servletPath\":\"/getAllRoles\", \"dispOrder\":\"0008\", \"permitAll\":\"N\"},\r\n    {\"funcId\":\"11102002\", \"funcType\":\"S\", \"funcName\":\"查詢所有權限功能\", \"servletPath\":\"/getAllFuncs\", \"dispOrder\":\"0009\", \"permitAll\":\"N\"},\r\n    {\"funcId\":\"11102003\", \"funcType\":\"B\", \"funcName\":\"查詢所有使用者\", \"servletPath\":\"/getAll\", \r\n    \"dispOrder\":\"0010\", \"permitAll\":\"Y\"},\r\n    {\"funcId\":\"11102004\", \"funcType\":\"B\", \"funcName\":\"查詢單一使用者\", \"servletPath\":\"/getUserByName\", \r\n    \"dispOrder\":\"0011\", \"permitAll\":\"Y\"},\r\n\r\n    {\"funcId\":\"11102005\", \"funcType\":\"B\", \"funcName\":\"查詢自己可進入的servletPath\", \"servletPath\":\"/getMyPermission\", \r\n    \"dispOrder\":\"0015\", \"permitAll\":\"Y\"},\r\n    \r\n\r\n\r\n    {\"funcId\":\"11103001\", \"funcType\":\"B\", \"funcName\":\"修改使用者密碼\", \"servletPath\":\"/changePassword\", \r\n    \"dispOrder\":\"0012\", \"permitAll\":\"Y\"},\r\n    {\"funcId\":\"11103002\", \"funcType\":\"S\", \"funcName\":\"賦予特定角色特定權限\", \"servletPath\":\"/admin/giveAuthority\", \"dispOrder\":\"0007\", \"permitAll\":\"N\"},\r\n\r\n    {\"funcId\":\"11103003\", \"funcType\":\"S\", \"funcName\":\"解除特定角色的特定權限\", \"servletPath\":\"/admin/removeAuthority\", \"dispOrder\":\"0013\", \"permitAll\":\"N\"},\r\n     \r\n    {\"funcId\":\"11104001\", \"funcType\":\"S\", \"funcName\":\"刪除使用者帳號\", \"servletPath\":\"/admin/deleteUser\", \"dispOrder\":\"0014\", \"permitAll\":\"N\"}\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/SpringSecurityDemo/root/importAuthorityData",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"SpringSecurityDemo",
+						"root",
+						"importAuthorityData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "importRoleAuthData",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\"authPrimarykey\":{\"deptId\":\"100\", \"roleId\":\"admin\", \"funcId\":\"11102001\"}, \"creflag\":\"Y\", \"inqflag\":\"Y\", \"updflag\":\"Y\", \"delflag\":\"Y\", \"procflag\":\"Y\"},\r\n    {\"authPrimarykey\":{\"deptId\":\"200\", \"roleId\":\"admin\", \"funcId\":\"11102001\"}, \"creflag\":\"Y\", \"inqflag\":\"Y\", \"updflag\":\"Y\", \"delflag\":\"Y\", \"procflag\":\"Y\"},\r\n    {\"authPrimarykey\":{\"deptId\":\"300\", \"roleId\":\"admin\", \"funcId\":\"11102001\"}, \"creflag\":\"Y\", \"inqflag\":\"Y\", \"updflag\":\"Y\", \"delflag\":\"Y\", \"procflag\":\"Y\"},\r\n    {\"authPrimarykey\":{\"deptId\":\"400\", \"roleId\":\"admin\", \"funcId\":\"11102001\"}, \"creflag\":\"Y\", \"inqflag\":\"Y\", \"updflag\":\"Y\", \"delflag\":\"Y\", \"procflag\":\"Y\"},\r\n    {\"authPrimarykey\":{\"deptId\":\"500\", \"roleId\":\"admin\", \"funcId\":\"11102001\"}, \"creflag\":\"Y\", \"inqflag\":\"Y\", \"updflag\":\"Y\", \"delflag\":\"Y\", \"procflag\":\"Y\"},\r\n    {\"authPrimarykey\":{\"deptId\":\"600\", \"roleId\":\"admin\", \"funcId\":\"11102001\"}, \"creflag\":\"Y\", \"inqflag\":\"Y\", \"updflag\":\"Y\", \"delflag\":\"Y\", \"procflag\":\"Y\"},\r\n\r\n    {\"authPrimarykey\":{\"deptId\":\"100\", \"roleId\":\"admin\", \"funcId\":\"11102002\"}, \"creflag\":\"Y\", \"inqflag\":\"Y\", \"updflag\":\"Y\", \"delflag\":\"Y\", \"procflag\":\"Y\"},\r\n    {\"authPrimarykey\":{\"deptId\":\"200\", \"roleId\":\"admin\", \"funcId\":\"11102002\"}, \"creflag\":\"Y\", \"inqflag\":\"Y\", \"updflag\":\"Y\", \"delflag\":\"Y\", \"procflag\":\"Y\"},\r\n    {\"authPrimarykey\":{\"deptId\":\"300\", \"roleId\":\"admin\", \"funcId\":\"11102002\"}, \"creflag\":\"Y\", \"inqflag\":\"Y\", \"updflag\":\"Y\", \"delflag\":\"Y\", \"procflag\":\"Y\"},\r\n    {\"authPrimarykey\":{\"deptId\":\"400\", \"roleId\":\"admin\", \"funcId\":\"11102002\"}, \"creflag\":\"Y\", \"inqflag\":\"Y\", \"updflag\":\"Y\", \"delflag\":\"Y\", \"procflag\":\"Y\"},\r\n    {\"authPrimarykey\":{\"deptId\":\"500\", \"roleId\":\"admin\", \"funcId\":\"11102002\"}, \"creflag\":\"Y\", \"inqflag\":\"Y\", \"updflag\":\"Y\", \"delflag\":\"Y\", \"procflag\":\"Y\"},\r\n    {\"authPrimarykey\":{\"deptId\":\"600\", \"roleId\":\"admin\", \"funcId\":\"11102002\"}, \"creflag\":\"Y\", \"inqflag\":\"Y\", \"updflag\":\"Y\", \"delflag\":\"Y\", \"procflag\":\"Y\"},\r\n\r\n    {\"authPrimarykey\":{\"deptId\":\"100\", \"roleId\":\"admin\", \"funcId\":\"11102003\"}, \"creflag\":\"Y\", \"inqflag\":\"Y\", \"updflag\":\"Y\", \"delflag\":\"Y\", \"procflag\":\"Y\"},\r\n    {\"authPrimarykey\":{\"deptId\":\"200\", \"roleId\":\"admin\", \"funcId\":\"11102003\"}, \"creflag\":\"Y\", \"inqflag\":\"Y\", \"updflag\":\"Y\", \"delflag\":\"Y\", \"procflag\":\"Y\"},\r\n    {\"authPrimarykey\":{\"deptId\":\"300\", \"roleId\":\"admin\", \"funcId\":\"11102003\"}, \"creflag\":\"Y\", \"inqflag\":\"Y\", \"updflag\":\"Y\", \"delflag\":\"Y\", \"procflag\":\"Y\"},\r\n    {\"authPrimarykey\":{\"deptId\":\"400\", \"roleId\":\"admin\", \"funcId\":\"11102003\"}, \"creflag\":\"Y\", \"inqflag\":\"Y\", \"updflag\":\"Y\", \"delflag\":\"Y\", \"procflag\":\"Y\"},\r\n    {\"authPrimarykey\":{\"deptId\":\"500\", \"roleId\":\"admin\", \"funcId\":\"11102003\"}, \"creflag\":\"Y\", \"inqflag\":\"Y\", \"updflag\":\"Y\", \"delflag\":\"Y\", \"procflag\":\"Y\"},\r\n    {\"authPrimarykey\":{\"deptId\":\"600\", \"roleId\":\"admin\", \"funcId\":\"11102003\"}, \"creflag\":\"Y\",\"inqflag\":\"Y\", \"updflag\":\"Y\", \"delflag\":\"Y\", \"procflag\":\"Y\"},\r\n    {\"authPrimarykey\":{\"deptId\":\"100\", \"roleId\":\"admin\", \"funcId\":\"11101005\"}, \"creflag\":\"Y\", \"inqflag\":\"Y\", \"updflag\":\"Y\", \"delflag\":\"Y\", \"procflag\":\"Y\"},\r\n    {\"authPrimarykey\":{\"deptId\":\"200\", \"roleId\":\"admin\", \"funcId\":\"11101005\"}, \"creflag\":\"Y\", \"inqflag\":\"Y\", \"updflag\":\"Y\", \"delflag\":\"Y\", \"procflag\":\"Y\"},\r\n    {\"authPrimarykey\":{\"deptId\":\"300\", \"roleId\":\"admin\", \"funcId\":\"11101005\"}, \"creflag\":\"Y\", \"inqflag\":\"Y\", \"updflag\":\"Y\", \"delflag\":\"Y\", \"procflag\":\"Y\"},\r\n    {\"authPrimarykey\":{\"deptId\":\"400\", \"roleId\":\"admin\", \"funcId\":\"11101005\"}, \"creflag\":\"Y\", \"inqflag\":\"Y\", \"updflag\":\"Y\", \"delflag\":\"Y\", \"procflag\":\"Y\"},\r\n    {\"authPrimarykey\":{\"deptId\":\"500\", \"roleId\":\"admin\", \"funcId\":\"11101005\"}, \"creflag\":\"Y\", \"inqflag\":\"Y\", \"updflag\":\"Y\", \"delflag\":\"Y\", \"procflag\":\"Y\"},\r\n    {\"authPrimarykey\":{\"deptId\":\"600\", \"roleId\":\"admin\", \"funcId\":\"11101005\"}, \"creflag\":\"Y\", \"inqflag\":\"Y\", \"updflag\":\"Y\", \"delflag\":\"Y\", \"procflag\":\"Y\"},\r\n    {\"authPrimarykey\":{\"deptId\":\"100\", \"roleId\":\"supervisor\", \"funcId\":\"11101006\"}, \"creflag\":\"Y\", \"inqflag\":\"Y\", \"updflag\":\"Y\", \"delflag\":\"Y\", \"procflag\":\"Y\"},\r\n    {\"authPrimarykey\":{\"deptId\":\"200\", \"roleId\":\"supervisor\", \"funcId\":\"11101006\"}, \"creflag\":\"Y\", \"inqflag\":\"Y\", \"updflag\":\"Y\", \"delflag\":\"Y\", \"procflag\":\"Y\"},\r\n    {\"authPrimarykey\":{\"deptId\":\"300\", \"roleId\":\"supervisor\", \"funcId\":\"11101006\"}, \"creflag\":\"Y\", \"inqflag\":\"Y\", \"updflag\":\"Y\", \"delflag\":\"Y\", \"procflag\":\"Y\"},\r\n    {\"authPrimarykey\":{\"deptId\":\"400\", \"roleId\":\"supervisor\", \"funcId\":\"11101006\"}, \"creflag\":\"Y\", \"inqflag\":\"Y\", \"updflag\":\"Y\", \"delflag\":\"Y\", \"procflag\":\"Y\"},\r\n    {\"authPrimarykey\":{\"deptId\":\"500\", \"roleId\":\"supervisor\", \"funcId\":\"11101006\"}, \"creflag\":\"Y\", \"inqflag\":\"Y\", \"updflag\":\"Y\", \"delflag\":\"Y\", \"procflag\":\"Y\"},\r\n    {\"authPrimarykey\":{\"deptId\":\"600\", \"roleId\":\"supervisor\", \"funcId\":\"11101006\"}, \"creflag\":\"Y\", \"inqflag\":\"Y\", \"updflag\":\"Y\", \"delflag\":\"Y\", \"procflag\":\"Y\"},\r\n\r\n    {\"authPrimarykey\":{\"deptId\":\"100\", \"roleId\":\"admin\", \"funcId\":\"11103002\"}, \"creflag\":\"Y\", \"inqflag\":\"Y\", \"updflag\":\"Y\", \"delflag\":\"Y\", \"procflag\":\"Y\"},\r\n    {\"authPrimarykey\":{\"deptId\":\"200\", \"roleId\":\"admin\", \"funcId\":\"11103002\"}, \"creflag\":\"Y\", \"inqflag\":\"Y\", \"updflag\":\"Y\", \"delflag\":\"Y\", \"procflag\":\"Y\"},\r\n    {\"authPrimarykey\":{\"deptId\":\"300\", \"roleId\":\"admin\", \"funcId\":\"11103002\"}, \"creflag\":\"Y\", \"inqflag\":\"Y\", \"updflag\":\"Y\", \"delflag\":\"Y\", \"procflag\":\"Y\"},\r\n    {\"authPrimarykey\":{\"deptId\":\"400\", \"roleId\":\"admin\", \"funcId\":\"11103002\"}, \"creflag\":\"Y\", \"inqflag\":\"Y\", \"updflag\":\"Y\", \"delflag\":\"Y\", \"procflag\":\"Y\"},\r\n    {\"authPrimarykey\":{\"deptId\":\"500\", \"roleId\":\"admin\", \"funcId\":\"11103002\"}, \"creflag\":\"Y\", \"inqflag\":\"Y\", \"updflag\":\"Y\", \"delflag\":\"Y\", \"procflag\":\"Y\"},\r\n    {\"authPrimarykey\":{\"deptId\":\"600\", \"roleId\":\"admin\", \"funcId\":\"11103002\"}, \"creflag\":\"Y\", \"inqflag\":\"Y\", \"updflag\":\"Y\", \"delflag\":\"Y\", \"procflag\":\"Y\"},\r\n\r\n\r\n\r\n\r\n    {\"authPrimarykey\":{\"deptId\":\"300\", \"roleId\":\"admin\", \"funcId\":\"11103001\"}, \"creflag\":\"Y\", \"inqflag\":\"Y\", \"updflag\":\"Y\", \"delflag\":\"Y\", \"procflag\":\"Y\"},\r\n    {\"authPrimarykey\":{\"deptId\":\"300\", \"roleId\":\"admin\", \"funcId\":\"11103003\"}, \"creflag\":\"Y\", \"inqflag\":\"Y\", \"updflag\":\"Y\", \"delflag\":\"Y\", \"procflag\":\"Y\"},\r\n    {\"authPrimarykey\":{\"deptId\":\"300\", \"roleId\":\"admin\", \"funcId\":\"11104001\"}, \"creflag\":\"Y\", \"inqflag\":\"Y\", \"updflag\":\"Y\", \"delflag\":\"Y\", \"procflag\":\"Y\"}\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/SpringSecurityDemo/root/importRoleAuthData",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"SpringSecurityDemo",
+						"root",
+						"importRoleAuthData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllRoles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/SpringSecurityDemo/root/getAllRoles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"SpringSecurityDemo",
+						"root",
+						"getAllRoles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAll",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/SpringSecurityDemo/getAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"SpringSecurityDemo",
+						"getAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllRolesBySrvltPath",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/SpringSecurityDemo/root/getAllRolesBySrvltPath?servletPath=/getAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"SpringSecurityDemo",
+						"root",
+						"getAllRolesBySrvltPath"
+					],
+					"query": [
+						{
+							"key": "servletPath",
+							"value": "/getAll"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getMyPermission",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/SpringSecurityDemo/getMyPermission",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"SpringSecurityDemo",
+						"getMyPermission"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllSrvltPathsByRole",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/SpringSecurityDemo/root/getAllSrvltPathsByRole?roleId=admin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"SpringSecurityDemo",
+						"root",
+						"getAllSrvltPathsByRole"
+					],
+					"query": [
+						{
+							"key": "roleId",
+							"value": "admin"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllFuncs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/SpringSecurityDemo/root/getAllFuncs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"SpringSecurityDemo",
+						"root",
+						"getAllFuncs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllAuths",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/SpringSecurityDemo/root/getAllAuths",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"SpringSecurityDemo",
+						"root",
+						"getAllAuths"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addAdmin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"username\":\"1100300\",\r\n    \"name\":\"張三\",\r\n\t\"password\":\"123\",\r\n\t\"role\":\"admin\",\r\n    \"department\":\"資訊部\",\r\n    \"deptId\":\"300\",\r\n    \"email\":\"1100301@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/SpringSecurityDemo/root/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"SpringSecurityDemo",
+						"root",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addSupervisor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"username\":\"1100601\",\r\n    \"name\":\"李四\",\r\n\t\"password\":\"123\",\r\n\t\"role\":\"supervisor\",\r\n    \"department\":\"行銷部\",\r\n    \"deptId\":\"600\",\r\n    \"email\":\"1100601@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/SpringSecurityDemo/admin/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"SpringSecurityDemo",
+						"admin",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"username\":\"1100602\",\r\n    \"name\":\"王五\",\r\n\t\"password\":\"123\",\r\n\t\"role\":\"user\",\r\n    \"department\":\"行銷部\",\r\n    \"deptId\":\"600\",\r\n    \"email\":\"1100602@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/SpringSecurityDemo/supervisor/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"SpringSecurityDemo",
+						"supervisor",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "giveAuthority",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"1100602\",\r\n    \"role\":\"handler\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/SpringSecurityDemo/admin/giveAuthority",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"SpringSecurityDemo",
+						"admin",
+						"giveAuthority"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "removeAuthority",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"1100602\",\r\n    \"role\":\"handler\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/SpringSecurityDemo/admin/removeAuthority",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"SpringSecurityDemo",
+						"admin",
+						"removeAuthority"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteUser",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"1100602\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/SpringSecurityDemo/admin/deleteUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"SpringSecurityDemo",
+						"admin",
+						"deleteUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "changePassword",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"1100602\",\r\n    \"password\":\"123\",\r\n    \"newpassword\":\"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/SpringSecurityDemo/changePassword",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"SpringSecurityDemo",
+						"changePassword"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUserByUsername",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/SpringSecurityDemo/getUserByName?username=1100602",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"SpringSecurityDemo",
+						"getUserByName"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "1100602"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyb290Iiwicm9sZSI6IlJPTEVfcm9vdCIsImRlcHRJZCI6IjMwMCIsImlzcyI6InJvb3QiLCJleHAiOjE2NTQ4NTA5ODAsImlhdCI6MTY1NDg0NzM4MH0.Yql1VaoVb_UmtE2vK9EnFmPpmWaeKCzFLE87s6gWj0gD-P8JW6_V2-wCoaJX28wtMFfdtc_JBlCmnXLNiZNOBA",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
