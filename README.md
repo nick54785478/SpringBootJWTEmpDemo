@@ -2,7 +2,7 @@
 
 SpringBootJWTEmpDemo 部門管理系統
 
-*概述: 此Demo是為了以前所待某銀行的外匯資產管理系統專案所設計出來的，使用過濾器Filter和JwtToken搭配資料庫來進行部門權限控制。
+*概述: 此Demo是為了以前所待某銀行的外匯資產管理系統專案所設計出來的，使用過濾器 Filter 和 JwtToken 搭配資料庫來進行部門權限控制。
 不幸的是該外匯系統 Fail 了...
 
 *使用框架及技術: SpringBoot、 SpringSecurity、JwtToken、SpringDataJPA/Hibernate
